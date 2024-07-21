@@ -5,4 +5,5 @@ export interface IListCard {
   imgUrl: ImageSourcePropType;
   title: string;
   duration: number;
+  tag: string;
 }

@@ -10,6 +10,7 @@ module.exports = {
         'btn-bg': '#00838f',
         'tx-primary': '#FFFFFF',
         'tx-secondary': '#E0E0E0',
+        'tx-silver': '#B0BEC5',
       },
       fontFamily: {
         mlight: ['Montserrat-Light', 'sans-serif'],
