@@ -1,20 +1,27 @@
-import { FlatList, Text, View } from 'react-native';
+import { FlatList, Text, TouchableHighlight } from 'react-native';
 
-const Tags = () => {
+const Tags = ({
+  tagsList,
+  onPress,
+  activeTag,
+}: {
+  tagsList: string[];
+  onPress: (tag: string) => void;
+  activeTag: string;
+}) => {
   return (
     <FlatList
-      data={[
-        'Breathing Exercises',
-        'Body Scan',
-        'Visualization',
-        'Mindfulness Meditation',
-        'Zen Meditation',
-      ]}
+      showsVerticalScrollIndicator={false}
+      showsHorizontalScrollIndicator={false}
+      data={['all', ...tagsList]}
       horizontal
-      renderItem={(item) => (
-        <View className="mb-11 mr-2 mt-4 flex h-9 items-center justify-center rounded-2xl bg-bg-secondary px-4">
-          <Text className="text-tx-silver">{item.item}</Text>
-        </View>
+      renderItem={(tag) => (
+        <TouchableHighlight
+          onPress={() => onPress(tag.item)}
+          className={`mr-2 mt-4 flex h-9 items-center justify-center rounded-2xl bg-bg-secondary px-4 ${activeTag === tag.item && 'bg-stone-700'}`}
+        >
+          <Text className="capitalize text-tx-silver">{tag.item}</Text>
+        </TouchableHighlight>
       )}
     />
   );

@@ -1,4 +1,4 @@
-import { IListCard } from '@/types/listCard';
+import { ICard } from '@/types/card';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { ImageBackground, View, Text } from 'react-native';
 
@@ -7,12 +7,12 @@ const Card = ({
   icon,
   iconColor,
 }: {
-  card: IListCard;
+  card: ICard;
   icon: 'leaf' | 'play' | 'info';
   iconColor: string;
 }) => {
   return (
-    <ImageBackground className="h-full w-full object-cover" source={card.imgUrl}>
+    <ImageBackground className="h-full w-full object-cover" source={{ uri: card.imgUrl }}>
       <View className="flex h-full w-full flex-col justify-between bg-[#00000063] px-2 py-4">
         <View className="flex flex-row items-center self-start rounded-2xl bg-[#00000068] px-2 py-1">
           <View
@@ -21,7 +21,7 @@ const Card = ({
           >
             <FontAwesome name={icon} size={8} color="#ffff" />
           </View>
-          <Text className="ml-1 text-xs text-white">{card.tag}</Text>
+          <Text className="ml-1 text-xs capitalize text-white">{card.label}</Text>
         </View>
         <View>
           <View className="flex flex-row items-center self-start rounded-2xl bg-[#00000068] px-2 py-1">
