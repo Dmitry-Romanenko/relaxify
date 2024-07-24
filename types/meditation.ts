@@ -1,3 +1,5 @@
+import { TAppData } from './shared';
+
 export interface IMeditation {
   id: string;
   title: string;
@@ -8,4 +10,8 @@ export interface IMeditation {
   duration: number;
   description: string;
   soundUrl: string;
+}
+
+export function isMeditation(data: TAppData): data is IMeditation {
+  return (data as IMeditation).soundUrl !== undefined;
 }

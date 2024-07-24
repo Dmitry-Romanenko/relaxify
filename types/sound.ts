@@ -1,3 +1,5 @@
+import { TAppData } from './shared';
+
 export interface ISound {
   id: string;
   title: string;
@@ -8,4 +10,8 @@ export interface ISound {
   duration: number;
   description: string;
   soundUrl: string;
+}
+
+export function isSound(data: TAppData): data is ISound {
+  return (data as ISound).soundUrl !== undefined;
 }

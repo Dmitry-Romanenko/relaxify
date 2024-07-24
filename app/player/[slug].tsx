@@ -1,15 +1,24 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { ImageBackground, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import {
+  ImageBackground,
+  View,
+  Text,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useLocalSearchParams } from 'expo-router';
 import { useEffect } from 'react';
 import Slider from '@react-native-community/slider';
 import { usePlayer } from '@/hooks/usePlayer';
 import { router } from 'expo-router';
+import { useGetSound } from '@/hooks/useSound';
+import Loading from '@/components/Loading';
+import ErrorMsg from '@/components/ErrorMsg';
 
 export default function Player() {
   const { slug } = useLocalSearchParams();
-
+  const { audio, error, loading, getAudioBySlug } = useGetSound(slug as string);
   const {
     duration,
     formatTime,
@@ -20,13 +29,15 @@ export default function Player() {
     isPlaying,
     isEnded,
   } = usePlayer('../../assets/sounds/forest5.mp3');
-  console.log(isEnded);
 
   useEffect(() => {
     if (isEnded) {
       router.navigate(`sound/${slug}`);
     }
   }, [isEnded]);
+
+  if (loading) return <Loading />;
+  if (error || audio === null || soundError) return <ErrorMsg retryFun={getAudioBySlug} />;
 
   return (
     <SafeAreaView className="flex-1">
@@ -37,12 +48,11 @@ export default function Player() {
         }}
       >
         <View className="relative flex h-full w-full flex-col justify-between bg-[#0000007f] py-20">
-          <TouchableOpacity
-            className="absolute left-5 top-4"
-            onPress={() => router.navigate(`sound/${slug}`)}
-          >
-            <FontAwesome name="close" size={25} color={'#e0e0e0'} />
-          </TouchableOpacity>
+          <View className="absolute left-5 top-4">
+            <TouchableWithoutFeedback onPress={() => router.back()}>
+              <FontAwesome name="close" size={25} color={'#e0e0e0'} />
+            </TouchableWithoutFeedback>
+          </View>
 
           <View className="flex w-[300px] items-center justify-center self-center">
             <Text className="text-center font-mbold text-3xl text-tx-primary">{audio.title}</Text>
@@ -67,7 +77,6 @@ export default function Player() {
           <View className="w-[100%] px-2">
             <Slider
               className="w-full"
-              style={styles.fullWidthBlock}
               minimumValue={0}
               maximumValue={duration}
               value={position}
@@ -86,9 +95,3 @@ export default function Player() {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  fullWidthBlock: {
-    width: '100%',
-  },
-});

@@ -1,38 +1,14 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { ImageBackground, View, Text, ScrollView } from 'react-native';
+import { ImageBackground, View, Text, ScrollView, TouchableWithoutFeedback } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useLocalSearchParams } from 'expo-router';
-import { useEffect, useState } from 'react';
-import { IArticle } from '@/types/article';
-import ApiService from '@/services/ApiService';
+import { router, useLocalSearchParams } from 'expo-router';
 import Loading from '@/components/Loading';
 import ErrorMsg from '@/components/ErrorMsg';
+import { useFetchArticle } from '@/hooks/useFetchArticle';
 
 export default function Article() {
   const { slug } = useLocalSearchParams();
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
-  const [article, setArticle] = useState<IArticle | null>(null);
-  const getArticleBySlug = async () => {
-    try {
-      setLoading(true);
-      setError(false);
-      const articleData = await ApiService.fetchItemBySlug<IArticle>({
-        endpoint: 'articles',
-        slug: slug as string,
-      });
-
-      setArticle(articleData.data);
-    } catch (err) {
-      setError(true);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    getArticleBySlug();
-  }, []);
+  const { article, error, getArticleBySlug, loading } = useFetchArticle(slug as string);
 
   if (loading) return <Loading />;
   if (error || article == null) return <ErrorMsg retryFun={getArticleBySlug} />;
@@ -48,9 +24,9 @@ export default function Article() {
             }}
           >
             <View className="flex h-full w-full flex-col justify-between bg-[#00000048] px-5 py-4">
-              <View>
+              <TouchableWithoutFeedback onPress={() => router.back()}>
                 <FontAwesome name="close" size={25} color={'#e0e0e0'} />
-              </View>
+              </TouchableWithoutFeedback>
               <Text className="font-mbold text-2xl text-tx-primary">{article.title}</Text>
             </View>
           </ImageBackground>

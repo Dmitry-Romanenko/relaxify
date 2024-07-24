@@ -1,4 +1,4 @@
-import { FlatList, Text, TouchableHighlight } from 'react-native';
+import { FlatList, Text, TouchableOpacity } from 'react-native';
 
 const Tags = ({
   tagsList,
@@ -16,12 +16,13 @@ const Tags = ({
       data={['all', ...tagsList]}
       horizontal
       renderItem={(tag) => (
-        <TouchableHighlight
+        <TouchableOpacity
+          activeOpacity={0.6}
           onPress={() => onPress(tag.item)}
-          className={`mr-2 mt-4 flex h-9 items-center justify-center rounded-2xl bg-bg-secondary px-4 ${activeTag === tag.item && 'bg-stone-700'}`}
+          className={`mr-2 mt-4 flex h-9 items-center justify-center rounded-2xl bg-bg-secondary px-4 ${activeTag === tag.item && 'bg-btn-bg'}`}
         >
-          <Text className="capitalize text-tx-silver">{tag.item}</Text>
-        </TouchableHighlight>
+          <Text className={`capitalize text-white`}>{tag.item}</Text>
+        </TouchableOpacity>
       )}
     />
   );

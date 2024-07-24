@@ -5,19 +5,21 @@ const ListHeader = ({
   title,
   subtitle,
   isLeft = false,
+  onPress,
 }: {
   title: string;
   subtitle?: string;
   isLeft?: boolean;
+  onPress: () => void;
 }) => {
   return (
     <View className="mb-2 flex flex-row items-center justify-between px-2">
-      {isLeft && <Chevron isLeft={isLeft} />}
-      <View className={`w-[80%] ${isLeft && 'flex items-center justify-center'}`}>
+      {isLeft && <Chevron onPress={onPress} isLeft={isLeft} />}
+      <View className={`w-[80%] ${isLeft && 'flex items-start justify-center'}`}>
         <Text className="font-msemibold text-lg text-tx-primary">{title}</Text>
         {subtitle && <Text className="font-mregular text-xs text-tx-secondary">{subtitle}</Text>}
       </View>
-      {!isLeft && <Chevron isLeft={isLeft} />}
+      {!isLeft && <Chevron onPress={onPress} isLeft={isLeft} />}
     </View>
   );
 };
