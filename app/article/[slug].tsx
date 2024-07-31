@@ -15,7 +15,7 @@ export default function Article() {
 
   return (
     <SafeAreaView className="flex-1 bg-bg-primary">
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
         <View className="h-full w-full">
           <ImageBackground
             className="h-[400px] w-full"

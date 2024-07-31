@@ -27,16 +27,11 @@ export default function Sounds() {
         <View className="mb-7">
           <Tags tagsList={tags} onPress={(tag) => setTag(tag)} activeTag={tag} />
         </View>
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
           <View className="flex flex-row flex-wrap justify-between gap-3">
             {renderItems.map((item) => (
               <View key={item.id} className={`mb-4 h-64 w-40 overflow-hidden rounded-3xl`}>
-                <Card
-                  card={item}
-                  icon="play"
-                  iconColor="#0D47A1"
-                  onPress={() => router.push(`sound/${item.slug}`)}
-                />
+                <Card card={item} onPress={() => router.push(`sound/${item.slug}`)} />
               </View>
             ))}
           </View>

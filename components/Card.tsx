@@ -2,18 +2,9 @@ import { ICard } from '@/types/card';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { useState } from 'react';
 import { ImageBackground, View, Text, Pressable } from 'react-native';
+import Label from './Label';
 
-const Card = ({
-  card,
-  icon,
-  iconColor,
-  onPress,
-}: {
-  card: ICard;
-  icon: 'leaf' | 'play' | 'info';
-  iconColor: string;
-  onPress: () => void;
-}) => {
+const Card = ({ card, onPress }: { card: ICard; onPress: () => void }) => {
   const [isPressed, setIsPressed] = useState(false);
 
   const handlePressIn = () => {
@@ -33,15 +24,7 @@ const Card = ({
         {isPressed && <View className="absolute z-[1] h-full w-full bg-[#dddddd1c]" />}
 
         <View className="flex h-full w-full flex-col justify-between bg-[#00000041] px-2 py-4">
-          <View className="flex flex-row items-center self-start rounded-2xl bg-[#00000068] px-2 py-1">
-            <View
-              className="flex h-[14px] w-[14px] items-center justify-center rounded-full"
-              style={{ backgroundColor: iconColor }}
-            >
-              <FontAwesome name={icon} size={8} color="#ffff" />
-            </View>
-            <Text className="ml-1 text-xs capitalize text-white">{card.label}</Text>
-          </View>
+          <Label label={card.label} />
           <View>
             <View className="flex flex-row items-center self-start rounded-2xl bg-[#00000068] px-2 py-1">
               <FontAwesome name="clock-o" size={12} color="#ffff" />

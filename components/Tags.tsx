@@ -19,7 +19,7 @@ const Tags = ({
         <TouchableOpacity
           activeOpacity={0.6}
           onPress={() => onPress(tag.item)}
-          className={`mr-2 mt-4 flex h-9 items-center justify-center rounded-2xl bg-bg-secondary px-4 ${activeTag === tag.item && 'bg-btn-bg'}`}
+          className={`mr-2 mt-2 flex h-9 items-center justify-center rounded-2xl bg-bg-secondary px-4 ${activeTag === tag.item && 'bg-btn-bg'}`}
         >
           <Text className={`capitalize text-white`}>{tag.item}</Text>
         </TouchableOpacity>

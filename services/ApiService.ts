@@ -2,10 +2,8 @@ import { ApiResponse, IFetchAll, IFetchBySlug } from '@/types/api';
 import { TAppData, TAppDataArr } from '@/types/shared';
 import axios, { AxiosInstance, AxiosResponse, AxiosError } from 'axios';
 
-const BASE_URL = 'http://192.168.178.90:5000';
-
 const axiosInstance: AxiosInstance = axios.create({
-  baseURL: BASE_URL,
+  baseURL: process.env.EXPO_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
