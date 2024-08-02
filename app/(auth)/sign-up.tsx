@@ -1,58 +1,38 @@
-import * as React from 'react';
-import { Text, TextInput, TouchableOpacity, View } from 'react-native';
-import { useSignUp } from '@clerk/clerk-expo';
-import { Link, router } from 'expo-router';
+import { Text, TouchableOpacity, View } from 'react-native';
+import { Link } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import TextField from '@/components/TextField';
-import { useState } from 'react';
 import Logo from '@/components/Logo';
 import AppButton from '@/components/AppButton';
 import Loading from '@/components/Loading';
+import { useForm } from '@/hooks/useForm';
+import { useUserAuth } from '@/hooks/useUserAuth';
 
-export default function SignUpScreen() {
-  const { isLoaded, signUp, setActive } = useSignUp();
-  const [firstName, setFirstName] = useState('');
-  const [emailAddress, setEmailAddress] = useState('');
-  const [password, setPassword] = useState('');
-  const [pendingVerification, setPendingVerification] = useState(false);
-  const [code, setCode] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
+export default function SignUp() {
+  const {
+    isLoaded,
+    onSignUpPress,
+    signUpLoading,
+    onPressVerify,
+    pendingVerification,
+    verifyEmailLoading,
+  } = useUserAuth();
+  const {
+    code,
+    emailAddress,
+    firstName,
+    onPressTogglePassword,
+    password,
+    setCode,
+    setFirstName,
+    setEmailAddress,
+    setPassword,
+    showPassword,
+  } = useForm();
+
   if (!isLoaded) {
     return <Loading />;
   }
-  const onPressTogglePassword = () => {
-    setShowPassword((prev) => !prev);
-  };
-
-  const onSignUpPress = async () => {
-    try {
-      await signUp.create({
-        username: firstName,
-        emailAddress,
-        password,
-      });
-      await signUp.prepareEmailAddressVerification({ strategy: 'email_code' });
-      setPendingVerification(true);
-    } catch (err: any) {
-      console.error(JSON.stringify(err, null, 2));
-    }
-  };
-
-  const onPressVerify = async () => {
-    try {
-      const signUpAttempt = await signUp.attemptEmailAddressVerification({
-        code,
-      });
-      if (signUpAttempt.status === 'complete') {
-        await setActive({ session: signUpAttempt.createdSessionId });
-        router.replace('/home');
-      } else {
-        console.error(JSON.stringify(signUpAttempt, null, 2));
-      }
-    } catch (err: any) {
-      console.error(JSON.stringify(err, null, 2));
-    }
-  };
 
   return (
     <SafeAreaView className="flex h-full w-full justify-center bg-bg-primary px-5">
@@ -87,7 +67,11 @@ export default function SignUpScreen() {
               onChangeText={(password) => setPassword(password)}
               value={password}
             />
-            <AppButton text="Sign Up" onPress={onSignUpPress} />
+            <AppButton
+              disabled={signUpLoading || !emailAddress.trim() || !password.trim()}
+              text="Sign Up"
+              onPress={async () => await onSignUpPress(firstName, emailAddress, password)}
+            />
 
             <View className="mt-5 flex flex-row items-center justify-between">
               <Text className="font-mregular text-xs text-tx-silver">Already have an account?</Text>
@@ -107,7 +91,11 @@ export default function SignUpScreen() {
               onChangeText={(code) => setCode(code)}
               value={code}
             />
-            <AppButton text="Verify Email" onPress={onPressVerify} />
+            <AppButton
+              disabled={verifyEmailLoading || !code.trim()}
+              text="Verify Email"
+              onPress={async () => await onPressVerify(code)}
+            />
           </View>
         )}
       </View>

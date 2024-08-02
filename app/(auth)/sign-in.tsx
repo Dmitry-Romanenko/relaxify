@@ -1,41 +1,27 @@
-import { useSignIn } from '@clerk/clerk-expo';
-import { Link, router } from 'expo-router';
+import { Link } from 'expo-router';
 import { SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
-import React, { useState } from 'react';
 import Logo from '@/components/Logo';
 import TextField from '@/components/TextField';
 import AppButton from '@/components/AppButton';
 import Loading from '@/components/Loading';
+import { useForm } from '@/hooks/useForm';
+import { useUserAuth } from '@/hooks/useUserAuth';
 
-export default function Page() {
-  const { signIn, setActive, isLoaded } = useSignIn();
-  const [emailAddress, setEmailAddress] = useState('');
-  const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
+export default function SignIn() {
+  const { isLoaded, onSignInPress, signInLoading } = useUserAuth();
 
-  const onPressTogglePassword = () => {
-    setShowPassword((prev) => !prev);
-  };
+  const {
+    emailAddress,
+    password,
+    setEmailAddress,
+    setPassword,
+    onPressTogglePassword,
+    showPassword,
+  } = useForm();
+
   if (!isLoaded) {
     return <Loading />;
   }
-
-  const onSignInPress = React.useCallback(async () => {
-    try {
-      const signInAttempt = await signIn.create({
-        identifier: emailAddress,
-        password,
-      });
-      if (signInAttempt.status === 'complete') {
-        await setActive({ session: signInAttempt.createdSessionId });
-        router.replace('/home');
-      } else {
-        console.error(JSON.stringify(signInAttempt, null, 2));
-      }
-    } catch (err: any) {
-      console.error(JSON.stringify(err, null, 2));
-    }
-  }, [isLoaded, emailAddress, password]);
 
   return (
     <SafeAreaView className="flex h-full w-full justify-center bg-bg-primary px-5">
@@ -62,7 +48,11 @@ export default function Page() {
             onChangeText={(password) => setPassword(password)}
             value={password}
           />
-          <AppButton text="Sign In" onPress={onSignInPress} />
+          <AppButton
+            disabled={signInLoading || !emailAddress.trim() || !password.trim()}
+            text="Sign In"
+            onPress={async () => await onSignInPress(emailAddress, password)}
+          />
         </View>
         <View className="mt-5 flex flex-row items-center justify-between">
           <Text className="font-mregular text-xs text-tx-silver">Don't have an account?</Text>

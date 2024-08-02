@@ -1,8 +1,14 @@
+import { useAuth } from '@clerk/clerk-expo';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { Tabs } from 'expo-router';
+import { Redirect, Tabs } from 'expo-router';
 import { StatusBar } from 'react-native';
 
 export default function TabLayout() {
+  const { isSignedIn } = useAuth();
+  if (!isSignedIn) {
+    return <Redirect href={'/sign-up'} />;
+  }
+
   return (
     <>
       <StatusBar hidden />

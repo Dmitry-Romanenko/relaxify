@@ -2,12 +2,11 @@ import { ApiResponse } from '@/types/api';
 import axios, { AxiosInstance, AxiosError } from 'axios';
 import type { DeletedObjectResource, EmailAddressResource } from '@clerk/types';
 
-console.log(process.env.EXPO_CLERK_BASE_URL);
 const axiosInstance: AxiosInstance = axios.create({
-  baseURL: process.env.EXPO_CLERK_BASE_URL,
+  baseURL: process.env.EXPO_PUBLIC_CLERK_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
-    Authorization: `Bearer ${process.env.EXPO_CLERK_SECRET_KEY}`,
+    Authorization: `Bearer ${process.env.EXPO_PUBLIC_CLERK_SECRET_KEY}`,
   },
 });
 

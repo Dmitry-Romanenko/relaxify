@@ -3,7 +3,7 @@ import { TAppData, TAppDataArr } from '@/types/shared';
 import axios, { AxiosInstance, AxiosResponse, AxiosError } from 'axios';
 
 const axiosInstance: AxiosInstance = axios.create({
-  baseURL: process.env.EXPO_BASE_URL,
+  baseURL: process.env.EXPO_PUBLIC_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },

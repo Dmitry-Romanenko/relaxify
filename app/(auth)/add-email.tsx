@@ -3,98 +3,83 @@ import { SafeAreaView, View, Text } from 'react-native';
 import Logo from '@/components/Logo';
 import TextField from '@/components/TextField';
 import AppButton from '@/components/AppButton';
-import { useCallback, useEffect, useState } from 'react';
 import { router } from 'expo-router';
 import Loading from '@/components/Loading';
-import ClerkService from '@/services/ClerkService';
+import { useForm } from '@/hooks/useForm';
+import { useUserManipulation } from '@/hooks/useUserManipulation';
 
 export default function AddEmail() {
   const { isLoaded, user } = useUser();
-  const [email, setEmail] = useState('');
-  const [prevEmail, setPrevEmail] = useState('');
-  const [successful, setSuccessful] = useState(false);
-  const [isPasswordCorrect, setIsPasswordCorrect] = useState(false);
-  const [isEmailChange, setIsEmailChange] = useState(false);
-  const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
-
-  const onPressTogglePassword = () => {
-    setShowPassword((prev) => !prev);
-  };
-
   if (!isLoaded) return <Loading />;
-
   if (isLoaded && !user?.id) {
     router.replace('/');
     return;
   }
+  const {
+    password,
+    setPassword,
+    showPassword,
+    onPressTogglePassword,
+    emailAddress,
+    setEmailAddress,
+  } = useForm();
+  const {
+    isPasswordCorrect,
+    isEmailChange,
+    handleChangeEmail,
+    verifyPassword,
+    verifyPasswordLoading,
+    prevEmail,
 
-  if (successful) {
+    changeEmailLoading,
+  } = useUserManipulation(user!);
+
+  if (isEmailChange) {
     router.replace('/profile');
   }
 
-  useEffect(() => {
-    setPrevEmail(user.emailAddresses[0].id);
-  }, [user]);
-
-  const handleChangeEmail = async () => {
-    try {
-      await ClerkService.createUserEmail(user.id, email);
-      await ClerkService.deleteUserEmail(prevEmail);
-      await user.reload();
-      setSuccessful(true);
-      setIsEmailChange(true);
-    } catch (err) {
-      console.error(JSON.stringify(err, null, 2));
-    }
-  };
-
-  const verifyPassword = useCallback(async () => {
-    try {
-      await ClerkService.verifiyUserPassword(user.id, password);
-      setIsPasswordCorrect(true);
-    } catch (err) {
-      console.error(JSON.stringify(err, null, 2));
-    }
-  }, [isLoaded, password]);
-
   return (
-    <>
-      <SafeAreaView className="flex h-full w-full justify-center bg-bg-primary px-5">
-        <View>
-          <Logo />
-          <Text className="mb-7 mt-7 font-mbold text-2xl text-tx-primary">Change Email</Text>
-        </View>
-        <View>
-          {isPasswordCorrect && (
-            <View>
-              <TextField
-                placeholder="Your email"
-                label="Email"
-                onChangeText={(email) => setEmail(email)}
-                value={email}
-              />
-              <AppButton text="Change email" onPress={handleChangeEmail} />
-              {isEmailChange && <Text>Done</Text>}
-            </View>
-          )}
-          {!isPasswordCorrect && (
-            <View>
-              <TextField
-                placeholder="Your password"
-                secureTextEntry={showPassword}
-                label="Password"
-                withIcon
-                iconName={showPassword ? 'eye' : 'eye-slash'}
-                onIconPress={onPressTogglePassword}
-                onChangeText={(password) => setPassword(password)}
-                value={password}
-              />
-              <AppButton text="Next" onPress={verifyPassword} />
-            </View>
-          )}
-        </View>
-      </SafeAreaView>
-    </>
+    <SafeAreaView className="flex h-full w-full justify-center bg-bg-primary px-5">
+      <View>
+        <Logo />
+        <Text className="mb-7 mt-7 font-mbold text-2xl text-tx-primary">Change Email</Text>
+      </View>
+      <View>
+        {isPasswordCorrect && (
+          <View>
+            <TextField
+              placeholder="Your email"
+              label="Email"
+              onChangeText={(email) => setEmailAddress(email)}
+              value={emailAddress}
+            />
+            <AppButton
+              disabled={changeEmailLoading || !emailAddress.trim()}
+              text="Change email"
+              onPress={async () => await handleChangeEmail(emailAddress, prevEmail)}
+            />
+          </View>
+        )}
+        {!isPasswordCorrect && (
+          <View>
+            <TextField
+              placeholder="Your password"
+              secureTextEntry={showPassword}
+              label="Password"
+              withIcon
+              iconName={showPassword ? 'eye' : 'eye-slash'}
+              onIconPress={onPressTogglePassword}
+              onChangeText={(password) => setPassword(password)}
+              value={password}
+            />
+            <AppButton
+              disabled={verifyPasswordLoading || !password.trim()}
+              text="Next"
+              onPress={async () => await verifyPassword(password)}
+            />
+          </View>
+        )}
+      </View>
+    </SafeAreaView>
   );
 }

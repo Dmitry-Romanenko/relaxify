@@ -2,23 +2,19 @@ import { FlatList, View, Text, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import ListHeader from '@/components/ListHeader';
 import Card from '@/components/Card';
-import { Redirect, router } from 'expo-router';
+import { router } from 'expo-router';
 import Loading from '@/components/Loading';
 import ErrorMsg from '@/components/ErrorMsg';
 import { useFetchHomeData } from '@/hooks/useFetchHomeData';
 import React from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import HomeCarousel from '@/components/HomeCarousel';
-import { useAuth, useUser } from '@clerk/clerk-expo';
+import { useUser } from '@clerk/clerk-expo';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 export default function Home() {
   const { articles, error, loading, meditations, sounds, getMainPageInfo } = useFetchHomeData();
   const { user } = useUser();
-  const { isSignedIn } = useAuth();
-  if (!isSignedIn) {
-    return <Redirect href={'/sign-up'} />;
-  }
   if (loading) return <Loading />;
   if (error) return <ErrorMsg retryFun={getMainPageInfo} />;
 

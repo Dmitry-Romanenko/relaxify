@@ -1,73 +1,33 @@
-import { useState } from 'react';
-import { router } from 'expo-router';
-import { useAuth, useSignIn } from '@clerk/clerk-expo';
-import { SafeAreaView, TouchableOpacity, View, Text } from 'react-native';
+import { SafeAreaView, View, Text } from 'react-native';
 import Logo from '@/components/Logo';
 import TextField from '@/components/TextField';
 import AppButton from '@/components/AppButton';
 import Loading from '@/components/Loading';
+import { useForm } from '@/hooks/useForm';
+import { useUserAuth } from '@/hooks/useUserAuth';
 
-const ForgotPassword = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [code, setCode] = useState('');
-  const [successfulCreation, setSuccessfulCreation] = useState(false);
-  const [secondFactor, setSecondFactor] = useState(false);
-  const [error, setError] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
-  const { isSignedIn } = useAuth();
-  const { isLoaded, signIn, setActive } = useSignIn();
-
-  const onPressTogglePassword = () => {
-    setShowPassword((prev) => !prev);
-  };
+export default function ForgotPassword() {
+  const {
+    resetPassword,
+    sendResetPassword,
+    isLoaded,
+    isResetSended,
+    sendResetPasswordLoading,
+    resetPasswordLoading,
+  } = useUserAuth();
+  const {
+    code,
+    emailAddress,
+    setEmailAddress,
+    setCode,
+    password,
+    onPressTogglePassword,
+    showPassword,
+    setPassword,
+  } = useForm();
 
   if (!isLoaded) {
     return <Loading />;
-  }
-
-  if (isSignedIn) {
-    router.push('/');
-  }
-
-  async function create() {
-    await signIn
-      ?.create({
-        strategy: 'reset_password_email_code',
-        identifier: email,
-      })
-      .then(() => {
-        setSuccessfulCreation(true);
-        setError('');
-      })
-      .catch((err) => {
-        console.error('error', err.errors[0].longMessage);
-        setError(err.errors[0].longMessage);
-      });
-  }
-
-  async function reset() {
-    await signIn
-      ?.attemptFirstFactor({
-        strategy: 'reset_password_email_code',
-        code,
-        password,
-      })
-      .then((result) => {
-        if (result.status === 'needs_second_factor') {
-          setSecondFactor(true);
-          setError('');
-        } else if (result.status === 'complete') {
-          setActive({ session: result.createdSessionId });
-          setError('');
-        } else {
-          console.log(result);
-        }
-      })
-      .catch((err) => {
-        console.error('error', err.errors[0].longMessage);
-        setError(err.errors[0].longMessage);
-      });
   }
 
   return (
@@ -77,18 +37,22 @@ const ForgotPassword = () => {
         <Text className="mb-7 mt-7 font-mbold text-2xl text-tx-primary">Forgot Password?</Text>
       </View>
       <View>
-        {!successfulCreation && (
+        {!isResetSended && (
           <View>
             <TextField
               placeholder="Your email"
               label="Email"
-              onChangeText={(email) => setEmail(email)}
-              value={email}
+              onChangeText={(email) => setEmailAddress(email)}
+              value={emailAddress}
             />
-            <AppButton text="Send password reset code" onPress={create} />
+            <AppButton
+              disabled={sendResetPasswordLoading || !emailAddress.trim()}
+              text="Send password reset code"
+              onPress={async () => await sendResetPassword(emailAddress)}
+            />
           </View>
         )}
-        {successfulCreation && (
+        {isResetSended && (
           <View>
             <TextField
               placeholder="Your password"
@@ -106,12 +70,14 @@ const ForgotPassword = () => {
               onChangeText={(code) => setCode(code)}
               value={code}
             />
-            <AppButton text="Reset" onPress={reset} />
+            <AppButton
+              disabled={resetPasswordLoading || !code.trim() || !password.trim()}
+              text="Reset"
+              onPress={async () => await resetPassword(code, password)}
+            />
           </View>
         )}
       </View>
     </SafeAreaView>
   );
-};
-
-export default ForgotPassword;
+}

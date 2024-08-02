@@ -9,7 +9,7 @@ import ErrorMsg from '@/components/ErrorMsg';
 import { articlesState, selectArticlesByTag, selectArticlesTags } from '@/state/articles';
 import { useFetchAllData } from '@/hooks/useFetchAllData';
 
-export default function Sounds() {
+export default function Articles() {
   const { error, loading, setTag, tag, tags, renderItems, getAllData } = useFetchAllData(
     'articles',
     articlesState,
