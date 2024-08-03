@@ -1,7 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
-  content: ['./app/**/*.{js,jsx,ts,tsx}', './components/**/*.{js,jsx,ts,tsx}'],
+  content: [
+    './app/**/*.{js,jsx,ts,tsx}',
+    './components/**/*.{js,jsx,ts,tsx}',
+    './utils/**/*.{js,jsx,ts,tsx}',
+  ],
   theme: {
     extend: {
       colors: {
@@ -10,6 +14,7 @@ module.exports = {
         'btn-bg': '#00838f',
         'tx-primary': '#FFFFFF',
         'tx-secondary': '#E0E0E0',
+        'tx-silver': '#B0BEC5',
       },
       fontFamily: {
         mlight: ['Montserrat-Light', 'sans-serif'],
