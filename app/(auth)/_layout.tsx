@@ -7,7 +7,7 @@ export default function AuthRoutesLayout() {
   const route = useRoute();
 
   // @ts-ignore
-  if (isSignedIn && route.params?.screen !== 'add-email') {
+  if (isSignedIn && route.params?.screen !== 'update-email') {
     return <Redirect href={'/home'} />;
   }
 

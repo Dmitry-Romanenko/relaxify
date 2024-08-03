@@ -1,7 +1,11 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { View, Text, TouchableOpacity } from 'react-native';
 
-const ErrorMsg = ({ retryFun }: { retryFun: () => void }) => {
+interface ErrorMsgProps {
+  retryFun: () => void;
+}
+
+const ErrorMsg = ({ retryFun }: ErrorMsgProps) => {
   return (
     <View className="flex h-full w-full items-center justify-center bg-bg-primary px-2">
       <View className="flex w-[300px] flex-col items-center justify-center gap-y-5">

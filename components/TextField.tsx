@@ -1,8 +1,19 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import * as React from 'react';
 import { useRef, useState } from 'react';
 import { Text, TextInput, View } from 'react-native';
 import { TouchableOpacity } from 'react-native';
+
+interface TextFieldProps {
+  value: string;
+  onChangeText?: (value: string) => void;
+  label: string;
+  placeholder: string;
+  secureTextEntry?: boolean;
+  onIconPress?: () => void;
+  withIcon?: boolean;
+  iconName?: 'eye' | 'eye-slash' | 'pencil';
+  editable?: boolean;
+}
 
 const TextField = ({
   value,
@@ -14,17 +25,7 @@ const TextField = ({
   iconName,
   onIconPress,
   editable = true,
-}: {
-  value: string;
-  onChangeText?: (value: string) => void;
-  label: string;
-  placeholder: string;
-  secureTextEntry?: boolean;
-  onIconPress?: () => void;
-  withIcon?: boolean;
-  iconName?: 'eye' | 'eye-slash' | 'pencil';
-  editable?: boolean;
-}) => {
+}: TextFieldProps) => {
   const [isFocused, setIsFocused] = useState(false);
   const inputRef = useRef<TextInput | null>(null);
 

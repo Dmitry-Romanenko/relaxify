@@ -27,7 +27,7 @@ export default function SignUp() {
     setFirstName,
     setEmailAddress,
     setPassword,
-    showPassword,
+    hidePassword,
   } = useForm();
 
   if (!isLoaded) {
@@ -59,10 +59,10 @@ export default function SignUp() {
 
             <TextField
               placeholder="Your password"
-              secureTextEntry={showPassword}
+              secureTextEntry={hidePassword}
               label="Password"
               withIcon
-              iconName={showPassword ? 'eye' : 'eye-slash'}
+              iconName={hidePassword ? 'eye' : 'eye-slash'}
               onIconPress={onPressTogglePassword}
               onChangeText={(password) => setPassword(password)}
               value={password}

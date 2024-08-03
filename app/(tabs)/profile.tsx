@@ -13,12 +13,12 @@ import Loading from '@/components/Loading';
 export default function Profile() {
   const { user, isLoaded } = useUser();
   if (!isLoaded) return <Loading />;
-  const { password, onPressTogglePassword, showPassword, setPassword, firstName, setFirstName } =
+  const { password, onPressTogglePassword, hidePassword, setPassword, firstName, setFirstName } =
     useForm({ firstNameInput: user?.username || '' });
   const {
     password: newPassword,
     onPressTogglePassword: onPressToggleNewPassword,
-    showPassword: showNewPassword,
+    hidePassword: hideNewPassword,
     setPassword: setNewPassword,
   } = useForm();
   const {
@@ -71,7 +71,7 @@ export default function Profile() {
             />
             <View>
               <Text className="my-4 font-msemibold text-lg text-tx-primary">Change Email</Text>
-              <Pressable onPress={() => router.push('/add-email')}>
+              <Pressable onPress={() => router.push('/update-email')}>
                 <TextField
                   editable={false}
                   placeholder="Your email"
@@ -86,20 +86,20 @@ export default function Profile() {
               <Text className="my-4 font-msemibold text-lg text-tx-primary">Change Password</Text>
               <TextField
                 placeholder="Your current password"
-                secureTextEntry={showPassword}
+                secureTextEntry={hidePassword}
                 label="Current Password"
                 withIcon
-                iconName={showPassword ? 'eye' : 'eye-slash'}
+                iconName={hidePassword ? 'eye' : 'eye-slash'}
                 onIconPress={onPressTogglePassword}
                 onChangeText={(password) => setPassword(password)}
                 value={password}
               />
               <TextField
                 placeholder="Your new password"
-                secureTextEntry={showNewPassword}
+                secureTextEntry={hideNewPassword}
                 label="New Password"
                 withIcon
-                iconName={showNewPassword ? 'eye' : 'eye-slash'}
+                iconName={hidePassword ? 'eye' : 'eye-slash'}
                 onIconPress={onPressToggleNewPassword}
                 onChangeText={(password) => setNewPassword(password)}
                 value={newPassword}

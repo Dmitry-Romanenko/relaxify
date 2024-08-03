@@ -1,9 +1,16 @@
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { router } from 'expo-router';
+import { Redirect, router } from 'expo-router';
 import Logo from '@/components/Logo';
+import { useAuth } from '@clerk/clerk-expo';
 
 export default function Index() {
+  const { isSignedIn } = useAuth();
+
+  if (isSignedIn) {
+    return <Redirect href={'/home'} />;
+  }
+
   return (
     <SafeAreaView className="flex-1">
       <View className="flex h-full w-full items-center justify-center bg-bg-primary px-6">
@@ -19,7 +26,7 @@ export default function Index() {
           </Text>
           <TouchableOpacity
             className="flex h-12 w-52 items-center justify-center rounded-2xl bg-btn-bg"
-            onPress={() => router.push('/home')}
+            onPress={() => router.push('/sign-up')}
           >
             <Text className="font-msemibold text-tx-primary">Start Meditation</Text>
           </TouchableOpacity>

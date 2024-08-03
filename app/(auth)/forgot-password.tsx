@@ -22,7 +22,7 @@ export default function ForgotPassword() {
     setCode,
     password,
     onPressTogglePassword,
-    showPassword,
+    hidePassword,
     setPassword,
   } = useForm();
 
@@ -56,10 +56,10 @@ export default function ForgotPassword() {
           <View>
             <TextField
               placeholder="Your password"
-              secureTextEntry={showPassword}
+              secureTextEntry={hidePassword}
               label="Password"
               withIcon
-              iconName={showPassword ? 'eye' : 'eye-slash'}
+              iconName={hidePassword ? 'eye' : 'eye-slash'}
               onIconPress={onPressTogglePassword}
               onChangeText={(password) => setPassword(password)}
               value={password}

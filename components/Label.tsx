@@ -1,7 +1,11 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { View, Text } from 'react-native';
 
-const Label = ({ label }: { label: string }) => {
+interface LabelProps {
+  label: string;
+}
+
+const Label = ({ label }: LabelProps) => {
   const isLabel = (text: string) => {
     return label.toLowerCase().includes(text);
   };

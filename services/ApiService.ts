@@ -46,6 +46,20 @@ class ApiService {
     }
   }
 
+  async fetchAffirmation(): Promise<ApiResponse<{ affirmation: string }>> {
+    try {
+      const response: AxiosResponse = await axios.get(`https://www.affirmations.dev`);
+      return {
+        data: response.data,
+        status: response.status,
+        headers: response.headers,
+      };
+    } catch (error) {
+      this.handleError(error as AxiosError);
+      throw error;
+    }
+  }
+
   private handleError(error: AxiosError): void {
     console.error('API call error:', error.message);
   }

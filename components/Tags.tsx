@@ -1,14 +1,12 @@
 import { FlatList, Text, TouchableOpacity } from 'react-native';
 
-const Tags = ({
-  tagsList,
-  onPress,
-  activeTag,
-}: {
+interface TagsProps {
   tagsList: string[];
   onPress: (tag: string) => void;
   activeTag: string;
-}) => {
+}
+
+const Tags = ({ tagsList, onPress, activeTag }: TagsProps) => {
   return (
     <FlatList
       showsVerticalScrollIndicator={false}

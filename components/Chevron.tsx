@@ -1,7 +1,12 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { TouchableOpacity } from 'react-native';
 
-const Chevron = ({ isLeft = true, onPress }: { isLeft?: boolean; onPress: () => void }) => {
+interface ChevronProps {
+  isLeft?: boolean;
+  onPress: () => void;
+}
+
+const Chevron = ({ isLeft = true, onPress }: ChevronProps) => {
   const iconName = isLeft ? 'chevron-left' : 'chevron-right';
   return (
     <TouchableOpacity

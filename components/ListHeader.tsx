@@ -1,17 +1,14 @@
 import { View, Text } from 'react-native';
 import Chevron from './Chevron';
 
-const ListHeader = ({
-  title,
-  subtitle,
-  isLeft = false,
-  onPress,
-}: {
+interface ListHeaderProps {
   title: string;
   subtitle?: string;
   isLeft?: boolean;
   onPress: () => void;
-}) => {
+}
+
+const ListHeader = ({ title, subtitle, isLeft = false, onPress }: ListHeaderProps) => {
   return (
     <View className="mb-3 flex flex-row items-center justify-between px-2">
       {isLeft && <Chevron onPress={onPress} isLeft={isLeft} />}

@@ -1,14 +1,12 @@
 import { TouchableOpacity, Text } from 'react-native';
 
-const AppButton = ({
-  onPress,
-  text,
-  disabled = false,
-}: {
+interface AppButtonProps {
   onPress: () => void;
   text: string;
   disabled?: boolean;
-}) => {
+}
+
+const AppButton = ({ onPress, text, disabled = false }: AppButtonProps) => {
   return (
     <TouchableOpacity
       disabled={disabled}

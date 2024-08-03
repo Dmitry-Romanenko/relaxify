@@ -9,11 +9,16 @@ import Toast from 'react-native-toast-message';
 import { toastConfig } from '@/utils/toastConfig';
 import { publishableKey, tokenCache } from '@/utils/tokenCache';
 import { fonts } from '@/constant/fonts';
+import * as ScreenOrientation from 'expo-screen-orientation';
 
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded, error] = useFonts(fonts);
+
+  useEffect(() => {
+    ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT_UP);
+  }, []);
 
   useEffect(() => {
     if (loaded || error) {

@@ -4,7 +4,12 @@ import { useState } from 'react';
 import { ImageBackground, View, Text, Pressable } from 'react-native';
 import Label from './Label';
 
-const Card = ({ card, onPress }: { card: ICard; onPress: () => void }) => {
+interface CardProps {
+  card: ICard;
+  onPress: () => void;
+}
+
+const Card = ({ card, onPress }: CardProps) => {
   const [isPressed, setIsPressed] = useState(false);
 
   const handlePressIn = () => {

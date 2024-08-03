@@ -105,7 +105,7 @@ export const useUserManipulation = (user: UserResource) => {
         setImageUri(null);
       }
       await user?.update({ username });
-      showSuccessToast('User updated');
+      showSuccessToast('Profile updated');
     } catch (err: unknown) {
       if (isClerkAPIResponseError(err)) setUpdateUserError(err.errors);
       console.error(JSON.stringify(err, null, 2));

@@ -1,7 +1,12 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { View, Text } from 'react-native';
 
-const CustomToast = ({ message, type }: { message: string[]; type: 'error' | 'success' }) => {
+interface CustomToastProps {
+  message: string[];
+  type: 'error' | 'success';
+}
+
+const CustomToast = ({ message, type }: CustomToastProps) => {
   return (
     <View className="min-h-[200px} flex w-[90%] flex-row items-center rounded-xl bg-bg-secondary px-4 py-3">
       <View

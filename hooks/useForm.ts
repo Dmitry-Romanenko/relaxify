@@ -17,10 +17,10 @@ export const useForm = ({
   const [emailAddress, setEmailAddress] = useState(emailAddressInput || '');
   const [password, setPassword] = useState(passwordInput || '');
   const [code, setCode] = useState(codeInput || '');
-  const [showPassword, setShowPassword] = useState(false);
+  const [hidePassword, setHidePassword] = useState(true);
 
   const onPressTogglePassword = () => {
-    setShowPassword((prev) => !prev);
+    setHidePassword((prev) => !prev);
   };
 
   return {
@@ -32,8 +32,8 @@ export const useForm = ({
     setPassword,
     code,
     setCode,
-    showPassword,
-    setShowPassword,
+    hidePassword,
+    setHidePassword,
     onPressTogglePassword,
   };
 };
