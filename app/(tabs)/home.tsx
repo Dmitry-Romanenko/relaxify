@@ -38,9 +38,14 @@ export default function Home() {
             ListHeaderComponent={
               <View>
                 <ProfileButton imageUrl={user?.imageUrl!} username={user?.username!} />
-                <HomeCarousel data={articles} />
+                <View>
+                  <HomeCarousel data={articles} />
+                  <View className="absolute bottom-0 w-full">
+                    <View className="h-6 w-full rounded-t-3xl bg-bg-primary" />
+                  </View>
+                </View>
                 <View className="px-3">
-                  <View className="mt-4" />
+                  <View />
                   <ListHeader
                     onPress={() => router.push(`sounds`)}
                     title="Calming Sounds"

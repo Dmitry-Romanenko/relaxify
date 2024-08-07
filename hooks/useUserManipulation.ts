@@ -15,6 +15,7 @@ export const useUserManipulation = (user: UserResource) => {
   const [isEmailChange, setIsEmailChange] = useState(false);
   const [prevEmail, setPrevEmail] = useState('');
   const [updatePasswordLoading, setUpdatePasswordLoading] = useState(false);
+  const [isPasswordUpdated, setIsPasswordUpdated] = useState(false);
   const [updatePasswordError, setUpdatePasswordError] = useState<null | ClerkAPIError[]>(null);
   const [changeEmailLoading, setChangeEmailLoading] = useState(false);
   const [changeEmailError, setChangeEmailError] = useState<null | ClerkAPIErrorJSON[]>(null);
@@ -24,6 +25,8 @@ export const useUserManipulation = (user: UserResource) => {
   const [logoutError, setLogoutError] = useState<null | ClerkAPIError[]>(null);
   const [updateUserLoading, setUpdateUserLoading] = useState(false);
   const [updateUserError, setUpdateUserError] = useState<null | ClerkAPIError[]>(null);
+  const [deleteUserLoading, setDeleteUserLoading] = useState(false);
+  const [deleteUserError, setDeleteUserError] = useState<null | ClerkAPIError[]>(null);
 
   useEffect(() => {
     setPrevEmail(user?.emailAddresses[0].id);
@@ -35,14 +38,24 @@ export const useUserManipulation = (user: UserResource) => {
     showErrorToast(verifyPasswordError);
     showErrorToast(logoutError);
     showErrorToast(updateUserError);
-  }, [updatePasswordError, changeEmailError, verifyPasswordError, logoutError, updateUserError]);
+    showErrorToast(deleteUserError);
+  }, [
+    updatePasswordError,
+    changeEmailError,
+    verifyPasswordError,
+    logoutError,
+    updateUserError,
+    deleteUserError,
+  ]);
 
   const handleUpdatePassword = async (currentPassword: string, newPassword: string) => {
     try {
+      setIsPasswordUpdated(false);
       setUpdatePasswordError(null);
       setUpdatePasswordLoading(true);
       await user.updatePassword({ currentPassword, newPassword });
       showSuccessToast('Password updated');
+      setIsPasswordUpdated(true);
     } catch (err: unknown) {
       if (isClerkAPIResponseError(err)) setUpdatePasswordError(err.errors);
       console.error(JSON.stringify(err, null, 2));
@@ -114,6 +127,22 @@ export const useUserManipulation = (user: UserResource) => {
     }
   };
 
+  const deleteAccount = async (confirm: string, restrict: string) => {
+    if (confirm === restrict) {
+      try {
+        setDeleteUserLoading(true);
+        setDeleteUserError(null);
+        await user.delete();
+        router.replace('/');
+      } catch (err) {
+        if (isClerkAPIResponseError(err)) setDeleteUserError(err.errors);
+        console.error(JSON.stringify(err, null, 2));
+      } finally {
+        setDeleteUserLoading(false);
+      }
+    }
+  };
+
   return {
     imageUriUi,
     pickImage,
@@ -136,5 +165,9 @@ export const useUserManipulation = (user: UserResource) => {
     changeEmailLoading,
     changeEmailError,
     logoutLoading,
+    deleteAccount,
+    deleteUserLoading,
+    deleteUserError,
+    isPasswordUpdated,
   };
 };

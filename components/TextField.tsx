@@ -6,7 +6,7 @@ import { TouchableOpacity } from 'react-native';
 interface TextFieldProps {
   value: string;
   onChangeText?: (value: string) => void;
-  label: string;
+  label?: string;
   placeholder: string;
   secureTextEntry?: boolean;
   onIconPress?: () => void;
@@ -36,7 +36,7 @@ const TextField = ({
 
   return (
     <View className="mb-4 flex flex-col gap-y-2">
-      <Text className="font-msemibold text-sm text-tx-silver">{label}</Text>
+      {label && <Text className="font-msemibold text-sm text-tx-silver">{label}</Text>}
       <View
         className={`${isFocused ? 'border-[1px] border-btn-bg' : 'border-transparent'} flex flex-row items-center rounded-lg ${editable ? 'bg-bg-secondary' : 'bg-[#555555]'} px-3 py-3 font-msemibold text-sm`}
       >

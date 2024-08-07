@@ -1,6 +1,6 @@
 import AppButton from '@/components/AppButton';
 import TextField from '@/components/TextField';
-import { View, Text, Image, Pressable, ScrollView } from 'react-native';
+import { View, Text, Image, Pressable, TouchableOpacity, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { useUser } from '@clerk/clerk-expo';
@@ -9,6 +9,8 @@ import { router } from 'expo-router';
 import { useForm } from '@/hooks/useForm';
 import { useUserManipulation } from '@/hooks/useUserManipulation';
 import Loading from '@/components/Loading';
+import DeleteAccountModal from '@/components/DeleteAccountModal';
+import { useEffect, useState } from 'react';
 
 export default function Profile() {
   const { user, isLoaded } = useUser();
@@ -30,9 +32,18 @@ export default function Profile() {
     updatePasswordLoading,
     updateUserLoading,
     logoutLoading,
+    deleteAccount,
+    deleteUserLoading,
+    isPasswordUpdated,
   } = useUserManipulation(user!);
+  const [openModal, setOpenModal] = useState(false);
 
   if (logoutLoading) return <Loading />;
+
+  useEffect(() => {
+    setPassword('');
+    setNewPassword('');
+  }, [isPasswordUpdated]);
 
   return (
     <SafeAreaView className="h-full w-full bg-bg-primary p-5">
@@ -110,11 +121,23 @@ export default function Profile() {
                 onPress={async () => await handleUpdatePassword(password, newPassword)}
               />
             </View>
-            <Text className="mt-5 text-center font-mregular text-base text-red-600">
-              Delete my account
-            </Text>
+            <Text className="my-4 font-msemibold text-lg text-red-600">Delete account</Text>
+            <TouchableOpacity
+              onPress={() => setOpenModal(true)}
+              className="w-52 rounded-xl bg-bg-secondary py-2"
+            >
+              <Text className="text-center font-mregular text-base text-red-600">
+                Delete my account
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
+        <DeleteAccountModal
+          closeModal={() => setOpenModal(false)}
+          isOpen={openModal}
+          deleteFun={deleteAccount}
+          isLoading={deleteUserLoading}
+        />
       </ScrollView>
     </SafeAreaView>
   );
