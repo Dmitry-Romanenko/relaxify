@@ -5,6 +5,7 @@ import { router, useLocalSearchParams } from 'expo-router';
 import Loading from '@/components/Loading';
 import ErrorMsg from '@/components/ErrorMsg';
 import { useFetchArticle } from '@/hooks/useFetchArticle';
+import Markdown from 'react-native-markdown-display';
 
 export default function Article() {
   const { slug } = useLocalSearchParams();
@@ -30,10 +31,17 @@ export default function Article() {
               <Text className="font-mbold text-2xl text-tx-primary">{article.title}</Text>
             </View>
           </ImageBackground>
+          <View className="px-5 py-1">
+            <Markdown
+              style={{
+                body: { color: '#ffffff', fontSize: 12, fontFamily: 'Montserrat-Regular' },
+              }}
+            >
+              {article.text}
+            </Markdown>
+          </View>
 
-          <Text className="px-5 py-3 font-mregular text-xs leading-5 text-tx-primary">
-            {article.text}
-          </Text>
+          <Text className="font-mregular text-xs leading-5 text-tx-primary"></Text>
         </View>
       </ScrollView>
     </SafeAreaView>
