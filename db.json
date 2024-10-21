@@ -1,0 +1,308 @@
+{
+  "meditations": [
+    {
+      "id": "med-01df3e2a-745e-41d6-b859-95a9b7ed8d1f",
+      "title": "Mindfulness Meditation for Beginners",
+      "slug": "mindfulness-meditation-for-beginners",
+      "tag": "Mindfulness",
+      "imgUrl": "https://images.unsplash.com/photo-1530789253388-582c481c54b0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "meditation",
+      "duration": 10,
+      "description": "Start your mindfulness journey with this beginner-friendly meditation. Learn the basics of mindfulness and how to incorporate it into your daily life. This session is perfect for those new to meditation, providing simple steps and guidance.",
+      "soundUrl": ""
+    },
+    {
+      "id": "med-13b6c7a9-7c91-4765-b5de-f68e6a9f2c3d",
+      "title": "Relaxation Techniques to Calm Your Mind",
+      "slug": "relaxation-techniques-to-calm-your-mind",
+      "tag": "Relaxation",
+      "imgUrl": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "meditation",
+      "duration": 15,
+      "description": "Discover effective relaxation techniques to calm your mind and reduce stress. This meditation helps you unwind after a long day, guiding you through various relaxation methods to achieve a peaceful state.",
+      "soundUrl": ""
+    },
+    {
+      "id": "med-30a0d2b7-57b0-4642-9c1e-f6b46d4950e8",
+      "title": "Finding Inner Peace Through Meditation",
+      "slug": "finding-inner-peace-through-meditation",
+      "tag": "Inner Peace",
+      "imgUrl": "https://images.unsplash.com/photo-1707343848552-893e05dba6ac?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "meditation",
+      "duration": 20,
+      "description": "This meditation guides you on a journey to finding inner peace and tranquility. Perfect for moments when you need to reconnect with yourself, it offers techniques to help you achieve a deep sense of calm and balance.",
+      "soundUrl": ""
+    },
+    {
+      "id": "med-7c203d61-45ea-4b6e-b7e3-b658f4bfb244",
+      "title": "Enhancing Focus with Guided Meditation",
+      "slug": "enhancing-focus-with-guided-meditation",
+      "tag": "Focus",
+      "imgUrl": "https://images.unsplash.com/photo-1527824404775-dce343118ebc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "meditation",
+      "duration": 12,
+      "description": "Improve your concentration and mental clarity with this guided meditation designed to enhance focus and productivity. Ideal for when you need to concentrate on tasks or study.",
+      "soundUrl": ""
+    },
+    {
+      "id": "med-f1da449b-09f3-45b3-9b16-f1831e8b4f74",
+      "title": "Stress Relief: Meditate Your Worries Away",
+      "slug": "stress-relief-meditate-your-worries-away",
+      "tag": "Stress Relief",
+      "imgUrl": "https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "meditation",
+      "duration": 18,
+      "description": "Relieve stress and anxiety with this calming meditation. Learn techniques to manage your stress levels and achieve a state of relaxation, helping you to meditate your worries away and find peace.",
+      "soundUrl": ""
+    },
+    {
+      "id": "med-7f4d9b1b-24df-49e5-87d1-4b8b5b1c9a7e",
+      "title": "Deep Breathing for Stress Relief",
+      "slug": "deep-breathing-for-stress-relief",
+      "tag": "Stress Relief",
+      "imgUrl": "https://images.unsplash.com/photo-1506355683710-bd071c0a5828?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "meditation",
+      "duration": 14,
+      "description": "This guided meditation focuses on deep breathing techniques to alleviate stress and anxiety. Learn how to use your breath to center yourself and achieve a state of calm, ideal for stressful situations.",
+      "soundUrl": ""
+    },
+    {
+      "id": "med-23d7e1c4-8e0a-4f3e-aee6-b1f3b5d6e789",
+      "title": "Guided Visualization for Inner Calm",
+      "slug": "guided-visualization-for-inner-calm",
+      "tag": "Inner Calm",
+      "imgUrl": "https://images.unsplash.com/photo-1602604193553-28c132dac0a7?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "meditation",
+      "duration": 16,
+      "description": "Immerse yourself in a guided visualization designed to bring inner calm. This meditation takes you on a journey to a serene mental space, helping you to manage stress and find peace.",
+      "soundUrl": ""
+    },
+    {
+      "id": "med-7c0d2e9b-0a6e-4a91-b8f2-6e7f8c0a8a4d",
+      "title": "Evening Reflection Meditation",
+      "slug": "evening-reflection-meditation",
+      "tag": "Reflection",
+      "imgUrl": "https://images.unsplash.com/photo-1549024676-eabbf58fe7ea?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "meditation",
+      "duration": 12,
+      "description": "This meditation helps you reflect on your day and unwind before bed. Engage in a calming practice that encourages introspection and relaxation, setting a tranquil tone for the evening.",
+      "soundUrl": ""
+    },
+    {
+      "id": "med-3d6e8f1b-9f3b-4b8a-823c-9e6b8a8b6b9a",
+      "title": "Energy Boosting Morning Meditation",
+      "slug": "energy-boosting-morning-meditation",
+      "tag": "Energy Boost",
+      "imgUrl": "https://images.unsplash.com/photo-1527856263669-12c3a0af2aa6?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "meditation",
+      "duration": 8,
+      "description": "Start your day with an energy-boosting meditation designed to invigorate and motivate you. This practice is perfect for enhancing your mood and preparing you for a productive day.",
+      "soundUrl": ""
+    },
+    {
+      "id": "med-1b2d3e4f-6a78-4b89-9c0d-4e5f6a7b8c9d",
+      "title": "Meditation for Emotional Healing",
+      "slug": "meditation-for-emotional-healing",
+      "tag": "Emotional Healing",
+      "imgUrl": "https://images.unsplash.com/photo-1474031317822-f51f48735ddd?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "meditation",
+      "duration": 22,
+      "description": "This meditation focuses on emotional healing, helping you process and release negative emotions. Through guided practices, achieve a greater sense of emotional balance and recovery.",
+      "soundUrl": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": "art-52d2f5bc-58b3-42e0-939b-29304c40d16f",
+      "title": "Top Meditation Techniques for Mindfulness",
+      "slug": "top-meditation-techniques-for-mindfulness",
+      "tag": "Meditation Techniques",
+      "imgUrl": "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "article",
+      "duration": 4,
+      "text": "Meditation is a practice that has been used for centuries to promote mindfulness and mental clarity. There are several techniques that can be particularly effective in achieving a mindful state. Here are some top meditation techniques for mindfulness: **Breathing Meditation:** This is one of the simplest and most effective forms of meditation. Focus on your breath, observing each inhale and exhale. This helps anchor your mind in the present moment and reduces distractions. **Body Scan Meditation:** This involves paying attention to different parts of your body, starting from your toes and moving up to your head. It helps in developing a greater awareness of bodily sensations and can be very relaxing. **Loving-Kindness Meditation:** Also known as Metta meditation, this technique involves focusing on cultivating feelings of compassion and love towards yourself and others. It's particularly effective in improving emotional well-being. **Mantra Meditation:** This involves repeating a word or phrase (mantra) to help focus the mind. The repetition of the mantra creates a calming effect, aiding in achieving a meditative state. **Walking Meditation:** This technique combines the physical activity of walking with the mindfulness of meditation. Focus on the act of walking, noticing the movement of your body and the sensations under your feet. Each of these techniques can be adapted to fit your personal preferences and lifestyle. By incorporating these practices into your daily routine, you can enhance your mindfulness and overall well-being."
+    },
+    {
+      "id": "art-93cbdc6e-1a74-4262-87b7-3134eac6652d",
+      "title": "The Impact of Meditation on Mental Health",
+      "slug": "the-impact-of-meditation-on-mental-health",
+      "tag": "Mental Health",
+      "imgUrl": "https://images.unsplash.com/photo-1504813205186-380b1235a5d2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "article",
+      "duration": 5,
+      "text": "Meditation has a profound impact on mental health. Research has shown that regular meditation practice can reduce symptoms of anxiety and depression, improve concentration, and promote emotional health. Here are some key ways meditation impacts mental health: **Reduces Anxiety:** Meditation helps reduce anxiety by calming the mind and reducing the mental chatter that often accompanies anxious thoughts. Mindfulness meditation, in particular, has been shown to reduce anxiety symptoms significantly. **Decreases Depression:** Meditation can also help in reducing symptoms of depression. By promoting a sense of calm and helping individuals focus on the present moment, meditation can alleviate feelings of hopelessness and sadness. **Enhances Emotional Health:** Regular meditation practice can lead to improved emotional health by increasing self-awareness and promoting a more positive outlook on life. It helps individuals develop a better understanding of their emotions and reactions. **Improves Concentration:** Meditation helps improve concentration and attention span. By practicing focused attention meditation, individuals can enhance their ability to concentrate on tasks and reduce distractions. **Promotes Overall Well-Being:** Meditation promotes overall well-being by reducing stress levels and promoting relaxation. It helps in achieving a balanced state of mind and body, contributing to better mental and physical health. Incorporating meditation into your daily routine can have lasting benefits for your mental health. Whether it's through mindfulness, loving-kindness, or focused attention meditation, the practice can help you achieve a healthier and more balanced state of mind."
+    },
+    {
+      "id": "art-1f7f9539-4de0-42d8-9822-30961676815d",
+      "title": "Daily Wellness Tips for a Mindful Life",
+      "slug": "daily-wellness-tips-for-a-mindful-life",
+      "tag": "Wellness Tips",
+      "imgUrl": "https://images.unsplash.com/photo-1631682825251-5b1e1f01a20c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "article",
+      "duration": 3,
+      "text": "Living a mindful life involves integrating mindfulness practices into your daily routine. Here are some daily wellness tips to help you live a more mindful life: **Start Your Day with Meditation:** Begin your day with a short meditation session. This helps set a positive tone for the day and prepares your mind for the tasks ahead. **Practice Mindful Eating:** Pay attention to the taste, texture, and aroma of your food. Avoid distractions like TV or smartphones while eating, and savor each bite mindfully. **Take Mindful Breaks:** Throughout the day, take short breaks to practice mindfulness. Whether it's a few minutes of deep breathing or a quick body scan, these breaks can help reduce stress and improve focus. **Engage in Mindful Movement:** Incorporate mindful movement into your routine, such as yoga or tai chi. These practices help connect the mind and body, promoting overall well-being. **Reflect on Your Day:** At the end of the day, take a few minutes to reflect on your experiences. Consider what you are grateful for and any moments of mindfulness you experienced. By incorporating these simple practices into your daily routine, you can live a more mindful and balanced life. Mindfulness helps reduce stress, improve focus, and enhance overall well-being."
+    },
+    {
+      "id": "art-6d5d82f9-2180-4048-8f75-73aefdd9e9b6",
+      "title": "A Beginner’s Guide to Starting Meditation",
+      "slug": "a-beginners-guide-to-starting-meditation",
+      "tag": "Beginner’s Guide",
+      "imgUrl": "https://plus.unsplash.com/premium_photo-1677934308187-26e8103c292b?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "article",
+      "duration": 6,
+      "text": "Starting a meditation practice can seem daunting, but it doesn't have to be. This beginner’s guide will help you get started on your meditation journey: **Find a Quiet Space:** Choose a quiet space where you won't be disturbed. It could be a corner of a room, a spot in your garden, or any place where you feel comfortable. **Get Comfortable:** Sit or lie down in a comfortable position. You can sit on a chair, a cushion, or directly on the floor. The key is to be comfortable and relaxed. **Focus on Your Breath:** Start by focusing on your breath. Observe the sensation of each inhale and exhale. If your mind wanders, gently bring your focus back to your breath. **Start with Short Sessions:** If you're new to meditation, start with short sessions of 5-10 minutes. Gradually increase the duration as you become more comfortable with the practice. **Be Patient:** Meditation is a skill that takes time to develop. Be patient with yourself and don't get discouraged if you find it challenging at first. **Explore Different Techniques:** There are various meditation techniques to explore, such as mindfulness, loving-kindness, and body scan meditation. Experiment with different techniques to find what works best for you. **Join a Community:** Consider joining a meditation group or community. Practicing with others can provide support and motivation. **Use Guided Meditations:** Guided meditations can be helpful, especially for beginners. There are many resources available online, including apps and websites, that offer guided meditation sessions. By following these tips, you can start your meditation journey and enjoy the numerous benefits it offers for your mind and body."
+    },
+    {
+      "id": "art-4a7d9b3c-1e0f-4b9e-8d2c-7a3b9f8a1b9d",
+      "title": "Understanding the Benefits of Daily Meditation",
+      "slug": "understanding-the-benefits-of-daily-meditation",
+      "tag": "Meditation Benefits",
+      "imgUrl": "https://images.unsplash.com/photo-1637822412463-65d4af2c910c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "article",
+      "duration": 6,
+      "text": "Daily meditation offers numerous benefits for both mind and body. Regular practice can reduce stress, improve emotional health, enhance self-awareness, and increase attention span. Meditation helps in managing anxiety and depression by promoting a state of calm and relaxation. It also fosters a deeper understanding of oneself and one's surroundings, contributing to a more balanced and fulfilling life. By dedicating just a few minutes each day to meditation, you can experience improved overall well-being and a greater sense of inner peace."
+    },
+    {
+      "id": "art-5e7f2d3c-8b6a-4f3d-9c1b-6e8a4b5c9d8e",
+      "title": "The Role of Mindfulness in Personal Growth",
+      "slug": "the-role-of-mindfulness-in-personal-growth",
+      "tag": "Personal Growth",
+      "imgUrl": "https://images.unsplash.com/photo-1637870045018-ac53e07d699f?q=80&w=1977&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "article",
+      "duration": 5,
+      "text": "Mindfulness plays a crucial role in personal growth by promoting self-awareness and emotional intelligence. It helps individuals stay present and focused, allowing for a deeper understanding of one's thoughts and feelings. Practicing mindfulness enhances the ability to respond to challenges with greater clarity and composure, facilitating personal development and growth. By incorporating mindfulness into daily life, individuals can cultivate a more thoughtful and intentional approach to personal and professional growth."
+    },
+    {
+      "id": "art-6c8d3f1a-2e7b-4f9a-9d2c-3b6a8d9f7e1b",
+      "title": "Exploring the Connection Between Meditation and Sleep",
+      "slug": "exploring-the-connection-between-meditation-and-sleep",
+      "tag": "Meditation and Sleep",
+      "imgUrl": "https://images.unsplash.com/photo-1637843891218-5fbdc761ee93?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "article",
+      "duration": 7,
+      "text": "Meditation can have a significant impact on sleep quality. By incorporating meditation into your nightly routine, you can improve your ability to fall asleep and enjoy a more restful sleep. Meditation techniques such as mindfulness and body scan can help calm the mind and relax the body, making it easier to drift off to sleep. Regular meditation practice has been shown to reduce insomnia symptoms and improve overall sleep patterns, leading to better physical and mental health."
+    },
+    {
+      "id": "art-8d9f1e2c-3b6a-4f9e-8d7b-1e5c6f7a8b9d",
+      "title": "Meditation Techniques to Improve Focus and Productivity",
+      "slug": "meditation-techniques-to-improve-focus-and-productivity",
+      "tag": "Focus and Productivity",
+      "imgUrl": "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "article",
+      "duration": 8,
+      "text": "Meditation can enhance focus and productivity by training the mind to concentrate on the present moment. Techniques such as mindfulness meditation, focused attention, and visualization can improve cognitive function and reduce mental clutter. By practicing meditation regularly, individuals can develop better attention control, increased mental clarity, and improved task performance. These benefits contribute to enhanced productivity and efficiency in both personal and professional settings."
+    }
+  ],
+  "sounds": [
+    {
+      "id": "snd-3f1a2d7e-78bc-4f5e-8f50-7e8f4f9a6d2b",
+      "title": "Calming Ocean Waves",
+      "slug": "calming-ocean-waves",
+      "tag": "Nature",
+      "imgUrl": "https://images.unsplash.com/photo-1499727349905-b4a773a89264?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "sound",
+      "duration": 25,
+      "description": "Relax to the soothing sounds of ocean waves. This audio track brings the calming ambiance of the sea to your space, perfect for relaxation, meditation, or background noise for studying and working.",
+      "soundUrl": ""
+    },
+    {
+      "id": "snd-2f7d3e1e-6b9f-49d7-922d-9e8d6f5e7c9f",
+      "title": "Gentle Rainfall",
+      "slug": "gentle-rainfall",
+      "tag": "Relaxation",
+      "imgUrl": "https://images.unsplash.com/photo-1527766833261-b09c3163a791?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "sound",
+      "duration": 30,
+      "description": "Immerse yourself in the calming sound of gentle rainfall. This audio track is ideal for creating a peaceful environment, helping you relax, meditate, or fall asleep with ease.",
+      "soundUrl": ""
+    },
+    {
+      "id": "snd-4c6b3e8a-7f2d-4d3b-8b45-1d6f9e2c8f7d",
+      "title": "Forest Birds Chirping",
+      "slug": "forest-birds-chirping",
+      "tag": "Nature",
+      "imgUrl": "https://images.unsplash.com/photo-1520808663317-647b476a81b9?q=80&w=1746&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "sound",
+      "duration": 20,
+      "description": "Experience the tranquil sounds of a forest filled with chirping birds. This audio track brings the serenity of nature to you, ideal for relaxation, meditation, and creating a natural ambiance.",
+      "soundUrl": ""
+    },
+    {
+      "id": "snd-9f8d6c3e-5b2f-4d7e-8b6d-2e7c4f5e9d1a",
+      "title": "Soothing River Stream",
+      "slug": "soothing-river-stream",
+      "tag": "Water",
+      "imgUrl": "https://images.unsplash.com/photo-1496611246382-3fbcd9b0ae7b?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "sound",
+      "duration": 15,
+      "description": "Let the calming sound of a river stream wash over you. This audio track is perfect for creating a peaceful atmosphere for relaxation, meditation, or as background noise for work and study.",
+      "soundUrl": ""
+    },
+    {
+      "id": "snd-3b7d2f6e-4c8f-47e9-8f7d-1b6f4e8c9d2a",
+      "title": "Wind Chimes in the Breeze",
+      "slug": "wind-chimes-in-the-breeze",
+      "tag": "Relaxation",
+      "imgUrl": "https://images.unsplash.com/photo-1424786194759-3e6b91d8d3bb?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "sound",
+      "duration": 10,
+      "description": "Enjoy the soothing sound of wind chimes swaying in the breeze. This audio track creates a calm and peaceful environment, perfect for meditation, relaxation, and enhancing your living space.",
+      "soundUrl": ""
+    },
+    {
+      "id": "snd-1e3b5d7e-9f3a-4b8c-8d6e-2f8a7b9c0d1e",
+      "title": "Serene Mountain Breeze",
+      "slug": "serene-mountain-breeze",
+      "tag": "Nature",
+      "imgUrl": "https://images.unsplash.com/photo-1566679056462-2075774c8c07?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "sound",
+      "duration": 28,
+      "description": "Enjoy the calming sound of a mountain breeze gently rustling through the trees. This audio track creates a peaceful environment, ideal for relaxation, meditation, or enhancing focus.",
+      "soundUrl": ""
+    },
+    {
+      "id": "snd-3d2f4e6a-8f1b-4c7e-9d0b-5e8a9f1b2c3d",
+      "title": "Soothing Fireplace Crackles",
+      "slug": "soothing-fireplace-crackles",
+      "tag": "Relaxation",
+      "imgUrl": "https://images.unsplash.com/photo-1496483353456-90997957cf99?q=80&w=1885&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "sound",
+      "duration": 22,
+      "description": "Relax by the comforting sound of a crackling fireplace. This audio track is perfect for creating a cozy atmosphere, aiding relaxation, and providing a warm background for meditation or study.",
+      "soundUrl": ""
+    },
+    {
+      "id": "snd-5a3d8e1b-4c9f-4b6d-9e2c-7b6f4c8a9e1b",
+      "title": "Gentle Stream Flow",
+      "slug": "gentle-stream-flow",
+      "tag": "Water",
+      "imgUrl": "https://images.unsplash.com/photo-1498855926480-d98e83099315?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "sound",
+      "duration": 19,
+      "description": "Immerse yourself in the gentle flow of a stream. This audio track provides a soothing background for relaxation and meditation, creating a serene environment that helps to reduce stress.",
+      "soundUrl": ""
+    },
+    {
+      "id": "snd-8f2d5e6a-1c7b-4d8e-9e3c-6f4b7a9c0d2e",
+      "title": "Whispering Wind Through Trees",
+      "slug": "whispering-wind-through-trees",
+      "tag": "Nature",
+      "imgUrl": "https://plus.unsplash.com/premium_photo-1681955753855-9d6bcde2d2a5?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "sound",
+      "duration": 24,
+      "description": "Experience the tranquil sound of wind whispering through the trees. This audio track helps create a calm and peaceful atmosphere, perfect for meditation, relaxation, or study.",
+      "soundUrl": ""
+    },
+    {
+      "id": "snd-9e7f3b1a-4c8d-4d7e-9b2c-8f6a1e3c7b9d",
+      "title": "Rainforest Ambience",
+      "slug": "rainforest-ambience",
+      "tag": "Relaxation",
+      "imgUrl": "https://images.unsplash.com/photo-1440581572325-0bea30075d9d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "label": "sound",
+      "duration": 27,
+      "description": "Immerse yourself in the vibrant sounds of a rainforest. This audio track includes a blend of rainfall, wildlife, and natural ambiance, perfect for relaxation and creating a soothing environment.",
+      "soundUrl": ""
+    }
+  ]
+}
